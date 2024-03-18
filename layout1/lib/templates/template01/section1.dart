@@ -49,6 +49,7 @@ class _Section1State extends State<Section1> {
   int selectedText = 0;
   double fontSize = 10.0;
   String temp = "Anmol";
+  double radius=10;
   String? title = 'Elegant Finds Boutique';
   final TextEditingController _titleController =
       TextEditingController(text: 'Elegant Finds Boutique');
@@ -310,8 +311,8 @@ class _Section1State extends State<Section1> {
     return AlertDialog(
       title: const Text('Enter URL'),
       content: SizedBox(
-        width: 200,
-        height: 300,
+        width: 300,
+        height: 250,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -320,22 +321,40 @@ class _Section1State extends State<Section1> {
               decoration: const InputDecoration(labelText: 'URL'),
             ),
             const SizedBox(height: 20),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Enable Blur'),
-                Switch(
-                  value: isBlurActive,
-                  onChanged: (value) {
-                    setState(() {
-                      isBlurActive = value;
-                    });
-                  },
-                ),
-                const Text('Apply borderRadius'),
-                
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Enable Blur'),
+                      Switch(
+                        onChanged: (value) {
+                          setState(() {
+                            isBlurActive = value;
+                          });
+                        },
+                        value: isBlurActive,
+                      ),
+                    ]),
+                Row(
+                  children: [
+                    Text('Border Radius'),
+                    Slider(
+                      value: radius,
+                      min: 0,
+                      max: 200, // Adjust max radius as needed
+                      onChanged: (newValue) {
+                        setState(() {
+                          radius = newValue;
+                        });
+                      },
+                    ),
+                  ],
+                )
               ],
             ),
+            SizedBox(height:5),
             ElevatedButton(
               onPressed: () {
                 String url = _urlController.text;
