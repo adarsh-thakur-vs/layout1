@@ -303,7 +303,9 @@ class HeaderState extends State<Header> {
             ),
           ),
           Section1(),
-          AboutUs()],
+          AboutUs(),
+          testimonial()
+          ],
         ),
       ),
       endDrawer: buildSelectedDrawer(),
