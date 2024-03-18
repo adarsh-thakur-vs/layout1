@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+// class Footer extends StatelessWidget {
+//   const Footer({super.key});
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Container(
-            child: Column(
-              children: [FooterSimple()],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return body: Center(
+//           child: Container(
+//             child: Column(
+//               children: [FooterSimple()],
+//             ),
+//           ),
+//       );
+//   }
+// }
 
 class FooterSimple extends StatefulWidget {
   const FooterSimple({Key? key}) : super(key: key);
@@ -229,20 +221,20 @@ class _FooterSimpleState extends State<FooterSimple> {
                           color: Colors.blue,
                         ),
                         SizedBox(width: 20),
-                        Icon(
-                          Icons.face,
+                        FaIcon(
+                          FontAwesomeIcons.linkedin,
                           size: 50,
                           color: Colors.lightBlue,
                         ),
                         SizedBox(width: 20),
-                        Icon(
-                          Icons.face_2_outlined,
+                        FaIcon(
+                          FontAwesomeIcons.twitter,
                           size: 50,
                           color: Colors.pink,
                         ),
                         SizedBox(width: 20),
-                        Icon(
-                          Icons.twelve_mp_outlined,
+                        FaIcon(
+                          FontAwesomeIcons.youtube,
                           size: 50,
                           color: Colors.red,
                         ),

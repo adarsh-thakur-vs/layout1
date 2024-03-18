@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:layout1/templates/template01/footer_simple.dart';
+
+import 'package:layout1/templates/template01/about_us.dart';
+import 'package:layout1/templates/template01/section1.dart';
+import 'package:layout1/templates/template01/header.dart';
+import 'package:layout1/templates/template01/testimonial.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,15 +16,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Container(
-            child: Column(
-              children: [FooterSimple()],
-            ),
-          ),
-        ),
-      ),
+      home: Header(),
     );
   }
 }
