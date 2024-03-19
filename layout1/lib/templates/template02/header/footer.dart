@@ -20,6 +20,7 @@ class _FooterState extends State<Footer> {
   late Color followUsColor;
   late Color containerColor;
   late Color copyrightTextColor;
+  late Color iconColor;
   @override
   void initState() {
     email = "contact@examle.com";
@@ -30,6 +31,7 @@ class _FooterState extends State<Footer> {
     followUsColor = Colors.black;
     containerColor = Colors.grey;
     copyrightTextColor=Colors.black;
+    iconColor=Colors.white;
   }
 
   Widget build(BuildContext context) {
@@ -149,33 +151,40 @@ class _FooterState extends State<Footer> {
                     ),
                   ),
                   SizedBox(height: 10.0),
-                  Row(
-                    children: [
-                      // ignore: prefer_const_constructors
-                      Icon(
-                        FontAwesomeIcons.facebook,
-                        color: Colors.blue, // Specify the color here
-                        size: 24,
-                      ),
-                      SizedBox(width: 10.0),
-                      Icon(
-                        FontAwesomeIcons.linkedin,
-                        color: Colors.blue, // Specify the color here
-                        size: 24,
-                      ),
-                      SizedBox(width: 10.0),
-                      Icon(
-                        FontAwesomeIcons.twitter,
-                        color: Colors.blue, // Specify the color here
-                        size: 24,
-                      ),
-                      SizedBox(width: 10.0),
-                      Icon(
-                        FontAwesomeIcons.youtube,
-                        color: Colors.red, // Specify the color here
-                        size: 24,
-                      ),
-                    ],
+                  GestureDetector(
+                    onTap: (() {
+                      showDialog(context: context, builder: (BuildContext context){
+                        return colorEdit(6);
+                      });
+                    }),
+                    child: Row(
+                      children: [
+                        // ignore: prefer_const_constructors
+                        Icon(
+                          FontAwesomeIcons.facebook,
+                          color: iconColor, // Specify the color here
+                          size: 24,
+                        ),
+                        SizedBox(width: 10.0),
+                        Icon(
+                          FontAwesomeIcons.linkedin,
+                          color: iconColor, // Specify the color here
+                          size: 24,
+                        ),
+                        SizedBox(width: 10.0),
+                        Icon(
+                          FontAwesomeIcons.twitter,
+                          color: iconColor, // Specify the color here
+                          size: 24,
+                        ),
+                        SizedBox(width: 10.0),
+                        Icon(
+                          FontAwesomeIcons.youtube,
+                          color: iconColor, // Specify the color here
+                          size: 24,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -266,6 +275,9 @@ class _FooterState extends State<Footer> {
                     }
                     else if(index==5){
                       copyrightTextColor=color;
+                    }
+                    else if(index==6){
+                      iconColor=color;
                     }
                   });
                 },
