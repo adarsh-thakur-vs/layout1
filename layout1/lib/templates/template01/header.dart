@@ -8,7 +8,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:layout1/main.dart';
 import 'package:layout1/templates/template01/about_us.dart';
 import 'package:layout1/templates/template01/footer_simple.dart';
 import 'package:layout1/templates/template01/section1.dart';

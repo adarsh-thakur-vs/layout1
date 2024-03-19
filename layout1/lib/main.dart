@@ -4,6 +4,7 @@ import 'package:layout1/templates/template01/about_us.dart';
 import 'package:layout1/templates/template01/section1.dart';
 import 'package:layout1/templates/template01/header.dart';
 import 'package:layout1/templates/template01/testimonial.dart';
+import 'package:layout1/templates/template02/header/footer.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Header(),
+      home: Scaffold(body: Footer()),
     );
   }
 }
